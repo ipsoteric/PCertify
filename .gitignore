@@ -1,0 +1,10 @@
+.venv
+build
+dist
+.env
+compiler.bat
+pcertify.db
+credentials.ini
+PCertify.spec
+version.txt
+__pycache__
