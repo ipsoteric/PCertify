@@ -38,23 +38,23 @@ class HomePage(customtkinter.CTkFrame):
         self.option1 = customtkinter.CTkButton(self.body_frame, text=Props.TEXT_MENU_CREATE_CERTIFICATE, command=lambda: controller.show_frame("Page1"), width=Props.WIDTH_MENU_OPTIONS)
         self.option1.place(relx=0.5, rely=0.2, anchor="center")
 
-        self.option2 = customtkinter.CTkButton(self.body_frame, text=Props.TEXT_MENU_CREATE_CERTIFICATES, command=self.button_callback, width=Props.WIDTH_MENU_OPTIONS)
-        self.option2.place(relx=0.5, rely=0.3, anchor="center")
+        # self.option2 = customtkinter.CTkButton(self.body_frame, text=Props.TEXT_MENU_CREATE_CERTIFICATES, command=self.button_callback, width=Props.WIDTH_MENU_OPTIONS)
+        # self.option2.place(relx=0.5, rely=0.3, anchor="center")
 
         self.option3 = customtkinter.CTkButton(self.body_frame, text=Props.TEXT_MENU_SEND_MAIL, command=lambda: controller.show_frame("PageListCertificates"), width=Props.WIDTH_MENU_OPTIONS)
-        self.option3.place(relx=0.5, rely=0.4, anchor="center")
+        self.option3.place(relx=0.5, rely=0.3, anchor="center")
 
         self.option4 = customtkinter.CTkButton(self.body_frame, text=Props.TEXT_MENU_CREATE_COURSE, command=lambda: controller.show_frame("PageCourse"), width=Props.WIDTH_MENU_OPTIONS)
-        self.option4.place(relx=0.5, rely=0.5, anchor="center")
+        self.option4.place(relx=0.5, rely=0.4, anchor="center")
 
         self.option5 = customtkinter.CTkButton(self.body_frame, text=Props.TEXT_MENU_APP_SETTINGS, command=lambda: controller.show_frame("PagePreferences"), width=Props.WIDTH_MENU_OPTIONS)
-        self.option5.place(relx=0.5, rely=0.6, anchor="center")
+        self.option5.place(relx=0.5, rely=0.5, anchor="center")
 
         self.option6 = customtkinter.CTkButton(self.body_frame, text="Abrir directorio de archivos", command=self.open_file, width=Props.WIDTH_MENU_OPTIONS, fg_color="green")
-        self.option6.place(relx=0.5, rely=0.7, anchor="center")
+        self.option6.place(relx=0.5, rely=0.6, anchor="center")
 
         self.option7 = customtkinter.CTkButton(self.body_frame, text="Salir", command=controller.destroy, width=Props.WIDTH_MENU_OPTIONS, fg_color="red")
-        self.option7.place(relx=0.5, rely=0.8, anchor="center")
+        self.option7.place(relx=0.5, rely=0.7, anchor="center")
 
     def button_callback(self):
         print("button pressed")
