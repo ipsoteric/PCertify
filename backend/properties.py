@@ -118,6 +118,6 @@ class AppProperties():
     FILE_TITLE = "Certificado de Curso"
 
     #AWS S3
-    BUCKET_NAME = 'pcertify-certificates'
-    IAM_CREDENTIALS_PATH = os.path.join(BASE_DIR, "credentials.ini")
+    BUCKET_NAME = os.getenv("AWS_S3_BUCKET_NAME")
+    # IAM_CREDENTIALS_PATH = os.path.join(BASE_DIR, "credentials.ini")
 

@@ -7,11 +7,10 @@ from backend.properties import AppProperties as Props
 
 
 def load_credentials():
-    config = configparser.ConfigParser()
-    config.read(Props.IAM_CREDENTIALS_PATH)
-    aws_access_key_id = config['default']['aws_access_key_id']
-    aws_secret_access_key = config['default']['aws_secret_access_key']
-    return aws_access_key_id, aws_secret_access_key
+    aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
+    aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+    aws_region_name = os.getenv("AWS_REGION_NAME")
+    return aws_access_key_id, aws_secret_access_key, aws_region_name
 
 
 def upload_file(file_path, bucket_name, object_name=None):
@@ -24,13 +23,13 @@ def upload_file(file_path, bucket_name, object_name=None):
     """
 
     # Cargar las credenciales desde un archivo específico
-    aws_access_key_id, aws_secret_access_key = load_credentials()
+    aws_access_key_id, aws_secret_access_key, region_name = load_credentials()
 
     # Crear la sesión de boto3 con las credenciales cargadas
     session = boto3.Session(
         aws_access_key_id=aws_access_key_id,
         aws_secret_access_key=aws_secret_access_key,
-        region_name='us-east-1'
+        region_name=region_name
     )
 
 
@@ -46,14 +45,10 @@ def upload_file(file_path, bucket_name, object_name=None):
     except ClientError as e:
         logging.error(e)
         return False
+    except Exception as e:
+        print(f"Ocurrió un error: {e}")
+        logging.error(e)
+        return False
 
     url = f"https://{bucket_name}.s3.amazonaws.com/{object_name}"
     return url
-
-## Ejemplo de uso
-#file_path = 'path/to/your/file.pdf'
-#BUCKE_NAME = 'your-bucket-name'
-#OBJECT_NAME = 'file.pdf'
-#
-#url = upload_file(file_path, BUCKE_NAME, OBJECT_NAME)
-#print(f"File uploaded to: {url}")
