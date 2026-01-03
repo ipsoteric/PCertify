@@ -14,7 +14,6 @@
   <br>
   <em>Vista principal de la aplicación</em>
 </p>
----
 
 
 ## Características Principales
