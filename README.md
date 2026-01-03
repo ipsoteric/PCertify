@@ -7,6 +7,15 @@
 
 **PCertify** es una solución de escritorio diseñada para automatizar la creación, gestión y validación de certificados de capacitación profesional para CIEDCHILE SPA. El sistema integra la generación dinámica de documentos PDF con la validación mediante códigos QR almacenados en la nube.
 
+---
+
+<p align="center">
+  <img src="./docs/img/captura-pcertify_home.png" alt="Interfaz Principal de PCertify" width="700">
+  <br>
+  <em>Vista principal de la aplicación</em>
+</p>
+---
+
 
 ## Características Principales
 
@@ -14,7 +23,7 @@
 * **Integración Cloud (AWS S3):** Carga automática de certificados a un bucket de Amazon S3 para su disponibilidad global y acceso mediante códigos QR.
 * **Validación con QR:** Generación de códigos QR únicos que enlazan directamente al certificado almacenado en la nube, permitiendo la verificación inmediata de la autenticidad.
 * **Gestión de Base de Datos:** Persistencia local mediante **SQLite** para el manejo de cursos, participantes y preferencias del sistema.
-* **Interfaz de Usuario Moderna:** UI fluida y adaptativa construida con `CustomTkinter`.
+* **Interfaz de Usuario Moderna:** UI construida con `CustomTkinter`.
 * **Seguridad de Datos:** Encriptación de credenciales sensibles con `Fernet` (Criptografía).
 
 ## Stack Tecnológico
